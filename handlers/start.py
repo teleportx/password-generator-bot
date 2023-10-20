@@ -1,3 +1,4 @@
+import asyncio
 import secrets
 from xml.etree import ElementTree
 
@@ -20,4 +21,8 @@ async def start(message: types.Message, command: CommandObject):
 
     password = ''.join(secrets.choice(config.Generation.letters) for _ in range(length))
 
-    await message.reply(f'Ok! Your password:\n`{password}`', parse_mode='markdown')
+    msg = await message.reply(f'This message will be deleted after 15 second!\nYour password:\n`{password}`',
+                              parse_mode='markdown')
+
+    await asyncio.sleep(15)
+    await msg.delete()
