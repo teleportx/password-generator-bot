@@ -11,10 +11,7 @@ class Telegram:
 
 
 class Generation:
-    letters = string.ascii_letters + string.digits + r"!#$%&()*+-.:<=>?@[]^_{|}~"
+    letters = string.ascii_letters + string.digits
 
     max_password_length = 512
     default_length = 64
-
-
-Generation.letters = Generation.letters.replace('`', '').replace('\\', '')
