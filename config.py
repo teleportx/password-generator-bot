@@ -7,7 +7,8 @@ load_dotenv()
 
 
 class Telegram:
-    token = environ.get('TOKEN')
+    token = environ['TOKEN']
+    bot_api_server = environ.get('TELEGRAM_BOT_API_SERVER')
 
 
 class Generation:
