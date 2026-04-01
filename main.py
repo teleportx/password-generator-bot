@@ -2,6 +2,7 @@ import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher
+from aiogram.client.default import DefaultBotProperties
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.client.telegram import TelegramAPIServer
 
@@ -30,7 +31,7 @@ def get_bot_api_session():
 
 
 async def main():
-    bot = Bot(token=config.Telegram.token, parse_mode='markdown', session=get_bot_api_session())
+    bot = Bot(token=config.Telegram.token, default=DefaultBotProperties(parse_mode='markdown'), session=get_bot_api_session())
     config.Telegram.bot = bot
 
     dp = Dispatcher()
