@@ -1,7 +1,6 @@
 import asyncio
 import secrets
 from random import randint
-from xml.etree import ElementTree
 
 from aiogram import Router
 from aiogram import types
